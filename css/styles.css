@@ -145,7 +145,7 @@ img {
   letter-spacing: 0.02em;
   color: var(--section-text-color);
   text-decoration: none;
-  transition: var(--animation);
+  transition: color var(--animation);
 }
 
 .link,
@@ -157,7 +157,7 @@ img {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  transition: var(--animation);
+  transition: color var(--animation);
 }
 
 .link-contacts:hover,
@@ -261,6 +261,7 @@ img {
   margin-right: 8px;
 }
 .buttons {
+  border: none;
   background-color: var(--buttons-background-color);
   transition-property: color, background-color, box-shadow;
   transition-duration: 250ms;
@@ -268,6 +269,7 @@ img {
 }
 
 .buttons-current {
+  border: none;
   color: #ffffff;
   background-color: #2196f3;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08),
@@ -289,7 +291,11 @@ img {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.1);
+  transition-property: opacity, visibility;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
@@ -537,7 +543,7 @@ img {
   line-height: 1.71;
   font-style: normal;
   text-decoration: none;
-  transition: var(--animation);
+  transition: color var(--animation);
 }
 
 .address:hover,
@@ -617,10 +623,15 @@ img {
   transition: transform, var(--animation);
   transition: background, var(--animation);
 }
-.item-projects:hover .info-block {
+.link-projects {
+  display: block;
+}
+.link-projects:hover .info-block,
+.link-projects:focus .info-block {
   transform: translateY(0);
   background: rgba(33, 150, 243, 0.9);
 }
+
 .info {
   font-size: 18px;
   line-height: 1.56;
@@ -668,7 +679,8 @@ img {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.item-projects:hover {
+.link-projects:hover,
+.link-projects:focus {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0 4px 4px rgba(0, 0, 0, 0.06),
     0 1px 1px rgba(0, 0, 0, 0.12);
 }
